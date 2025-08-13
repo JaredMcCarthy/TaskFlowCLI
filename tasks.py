@@ -1,14 +1,12 @@
 
-
-
-
-lista_global = {
+lista_tareas = {
     "nombre" : "Jared Lopez",
     "categoria" : "Universidad",
     "prioridad" : "Alta",
     "estado" : "Pendiente"
 }
-def agregar_tarea():
-    global lista_global
+
+def agregar_tareas():
+    pass
 
 

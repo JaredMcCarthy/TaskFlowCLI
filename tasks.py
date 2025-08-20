@@ -1,8 +1,8 @@
 
+from main import menu_inicio
 
-import main
 
-tareas = {
+lista_global = {
     "nombre": "Jared",
     "categoria": "Comida",
     "prioridad": "Alta",
@@ -14,6 +14,15 @@ tareas = {
 #crear la funcion agragr tareas DONE
 
 
-def agregar_tareas():
-    global tareas
+def agregar_tareas(datos):
+    global lista_global
+
+
+def listar_tareas(menu_inicio):
+    datos = menu_inicio(object)
+    print(datos)
+
+
+
+
 

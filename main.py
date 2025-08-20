@@ -1,6 +1,7 @@
 # hacer un menu para probar anandir tareas
 # el objetivo es que el programa me deje agregar tareas y que se guarde en una lista de memoria
 
+
 lista_global = []
 
 
@@ -34,6 +35,7 @@ def menu_inicio():
         except ValueError:
             print("Ingresa valores que sean aceptados.")
             break
+
 
 menu_inicio()
 

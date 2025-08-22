@@ -30,10 +30,9 @@ while True:
     elif opcion == '3':
         print("Saliendo del programa con exito ;)")
         sys.exit()
-        break
+    break
 
-    else:
-        print("Ingrese un numero que sea valido como un numero")
+
 
 
 

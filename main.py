@@ -1,5 +1,5 @@
 
-from tasks import agregar_tareas, listar_tareas
+from tasks import agregar_tareas, listar_tareas, tareas_completadas
 import sys
 
 def mostrar_menu():
@@ -9,6 +9,10 @@ def mostrar_menu():
     print("3 - Salir del programa.")
 
 
+def submenu_tareas():
+    print("1 - Ver todas las tareas.")
+    print("2 - Ver las tareas compledas")
+    print("3 - Salir")
 
 while True:
     mostrar_menu()
@@ -25,7 +29,18 @@ while True:
         agregar_tareas(nuevo_estado)
 
     elif opcion == '2':
-        listar_tareas()
+        submenu_tareas()
+        while True:
+            subopt = input("Seleccione una de las opciones.\n")
+            if subopt == '1':
+                listar_tareas()
+            elif subopt == '2':
+                tareas_completadas()
+            else:
+                print("Saliendo del sistema")
+                sys.exit()
+            break
+
 
     elif opcion == '3':
         print("Saliendo del programa con exito ;)")

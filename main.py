@@ -23,17 +23,22 @@ while True:
         nueva_categoria = input("Agregue la categoria.\n")
         nueva_prioridad = input("Agregue la prioridad.\n")
         nuevo_estado = input("Agregue el estado de la tarea.\n")
-        agregar_tareas(nueva_tarea)
-        agregar_tareas(nueva_categoria)
-        agregar_tareas(nueva_prioridad)
-        agregar_tareas(nuevo_estado)
+
+        agregado = {
+            agregar_tareas(nueva_tarea),
+            agregar_tareas(nueva_categoria),
+            agregar_tareas(nueva_prioridad),
+            agregar_tareas(nuevo_estado)
+        }
+
+        continue
 
     elif opcion == '2':
         submenu_tareas()
         while True:
             subopt = input("Seleccione una de las opciones.\n")
             if subopt == '1':
-                listar_tareas()
+                listar_tareas(nueva_tarea, nueva_categoria, nueva_prioridad, nuevo_estado)
             elif subopt == '2':
                 tareas_completadas()
             else:
@@ -50,7 +55,7 @@ while True:
 
 
 
-
+# pull request rama = pr_main (solo pr de main.py por si acaso)
 
 
 

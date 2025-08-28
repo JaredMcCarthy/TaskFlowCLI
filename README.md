@@ -1,13 +1,10 @@
 # TaskFlowCLI
-# Programa de tareas en terminal sin conexion a internet.
+# Programa capaz de correr desde el terminal de cualquier PC
+# Sin necesidad de tomar memoria significante. 
 
-# Agregar, Eliminar, Editar tareas automaticas desde el terminal de tu consola sin necesidad
-# de estar conectado a una red WIFI.
-
-# Podra guardar todo tipos de datos, fechas, letras para una tarea especifica.
-# nada innovador solo el proyecto propio de un programador.
-
-# Puedes copiar el codigo, ver los avances, apoyar y comentar si te gusto
-# o te podria gustar innovar algo en el programa ;)
-
+#capaz de correr tareas sin necesidad de abrir el programa.
+#(Es la idea)
+#Agregar, completar, visualizar y automatizar procesos y programas.
+#Desde un comando.
+# [Proyecto ACVA]
 

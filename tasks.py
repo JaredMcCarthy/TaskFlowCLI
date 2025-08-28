@@ -1,44 +1,39 @@
-
 import random
 
-tareas = []
+tareas_global = []
 random_number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-random_letter = ["A", "E", "I", "O", "U"]
 
-def agregar_tareas(tarea):
-    tareas.append(tareas)
-    print(f"La tarea {tarea} se agrego a la lista.")
-    print(f"La categoria {nueva_categoria} se agrego a la lista.")
+
+# random_letter = ["A", "E", "I", "O", "U"]
+
+def agregar_tareas(agregdos):
+    global num
+    tareas_global.append(agregdos)
+    for i in range(1, 10):
+        num = random.choice(random_number)
+    print(f"Se agrego la tarea num.{num} exitosamente.")
+    tareas_global.append(listar_tareas)
+
 
 def tareas_completadas():
     print("Que tareas estan completas?")
-    print("Inserte el codigo de tarea")   #aqui la logica hay que trabajarla para que cuando el usuario quiera senalar que esta completa, se marque completa
-                                        #y luego se marque como completa en la lista global o crear otra no se.
+    print("Inserte el codigo de tarea")
 
-def listar_tareas():
-    if not tareas:
-        print("No ha sido agregada a la lista.")
+
+def listar_tareas(nueva_tarea, nueva_categoria, nueva_prioridad, nuevo_estado):
+    if not tareas_global:
+        print("No se han registrado tareas hasta el momento.")
     else:
-        print("-----Lista de tareas-----")
-        for i, tarea in enumerate(tareas):
-            print(f"{i + 1}. {tarea}")
-            break
+        for i in enumerate(tareas_global):
+            print( {
+                "Tarea": {nueva_tarea},
+                "Categoria": {nueva_categoria},
+                "Prioridad": {nueva_prioridad},
+                "Estado": {nuevo_estado}
+            })
 
 
 
-# import main
-#
-#
-# # import main
-#
-#
-# # guarder las tareas en una lista global por hora
-# #crear la funcion agragr tareas DONE
-#
-#
-# def agregar_tareas():
-#     global lista_global
-#
-#
-# def listar_tareas():
-#     pass
+
+
+

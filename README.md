@@ -23,7 +23,7 @@ cd TaskFlowCLI
 python taskflow.py
 ```
 
-# Contributing to CommandLineInterface
+# Contributing to Command Line Interface
 
 First of all, thanks for your interest in contributing!  
 

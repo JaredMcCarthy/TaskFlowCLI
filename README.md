@@ -18,7 +18,7 @@ TaskFlowCLI is a Python project that runs directly from the terminal without tak
 ## Quick Start  
 Clone the repository and run it with Python:  
 ```bash
-git clone https://github.com/your-username/TaskFlowCLI.git
+git clone https://github.com/jaredmccarthy/TaskFlowCLI.git
 cd TaskFlowCLI
 python taskflow.py
 ```

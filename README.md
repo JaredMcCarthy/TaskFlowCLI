@@ -21,6 +21,8 @@ Clone the repository and run it with Python:
 git clone https://github.com/your-username/TaskFlowCLI.git
 cd TaskFlowCLI
 python taskflow.py
+```
+
 # Contributing to TaskFlowCLI  
 
 First of all, thanks for your interest in contributing!  
@@ -38,4 +40,3 @@ First of all, thanks for your interest in contributing!
 - Be respectful and collaborative  
 
 This project is still in development, so contributions of any size (ideas, suggestions, code) are welcome.  
-

@@ -33,3 +33,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    agregar_tareas()
+    listar_tareas()

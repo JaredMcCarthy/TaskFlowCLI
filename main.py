@@ -7,12 +7,13 @@ def mostra_menu():
     print("\n--- Menú Principal ---")
     print("1 - Agregar tareas")
     print("2 - Mostrar las tareas")
-    print("3 - Salir")
+    print("3 - Tareas Completadas")
+    print("0 - Salir.")
 
 
 def main():
 
-    tareas_guardadas = []
+    tareas_guardadas = {}
 
     while True:
         mostra_menu()
@@ -22,12 +23,11 @@ def main():
             agregar_tareas(tareas_guardadas)
         elif opcion == '2':
             listar_tareas(tareas_guardadas)
-        elif opcion == '0':
-            tareas_completadas(listar_tareas)
         elif opcion == '3':
+            tareas_completadas(tareas_guardadas)
+        elif opcion == '0':
             print("Saliendo del programa...")
             sys.exit()  #sale del programa
-
 
 
 

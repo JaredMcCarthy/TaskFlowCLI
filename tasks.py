@@ -4,12 +4,12 @@ datos_guardados = {}
 #solo por si acaso mejor eliminemos eso y dejemos una lista global por si acaso
 
 def agregar_tareas(datos_guardados):
-    datos_guardados['Tarea'] = input("Cual es la tarea que quiere agendar? \n")
-    datos_guardados['Categoria'] = input("Cual es la categoria de la tarea \n")
-    datos_guardados['prioridad'] = input("A = Alta / M = Media / B = Baja \n")
-    datos_guardados['estado'] = input("C = Completado / P = Pendiente \n")
+    nombre = input("Inserte el nombre de su tarea.")
+    categoria = input("Inserte el categoria de su tarea.")
+
 
 def tareas_completadas(t_completado):
+        global tareas_hechas
         r_competada = input("Quieres ver todas las tareas completadas? S/N\n")
 
         if r_competada == 'S':
@@ -23,6 +23,19 @@ def tareas_completadas(t_completado):
         for i, tarea in enumerate(tareas_hechas, 1):
             print(f"{i}, {tarea['Tarea']} - Categoria: {tarea['Categoria']} - Prioridad: {tarea['prioridad']} - Estado: {tarea['estado']}")
 
+
+def listar_tareas(datos_guardados):
+    if not datos_guardados:
+        print("No hay datos guardados.")
+    else:
+        for indice, (clave, valor) in enumerate(datos_guardados.items()):
+            print(f" {indice + 1}) {clave}: {valor}")      #de esta manera asiganos una llave y lo que el usuario ingrese al momento de imprimir el resultado
+
+
+
+def filtrar_tareas(datos_guardados):
+    for i in range(datos_guardados):
+        pass
 
     # lista_secundaria.append(n_tarea)
     # lista_secundaria.append(c_tarea)
@@ -56,19 +69,6 @@ def tareas_completadas(t_completado):
     # lista_tareas.append(prioridad_tarea)
     # lista_tareas.append(estado_tarea)
 
-
-
-
-
-
-def listar_tareas(datos_guardados):
-    if not datos_guardados:
-        print("No hay datos guardados.")
-    else:
-        for indice, (clave, valor) in enumerate(datos_guardados.items()):
-            print(f" {indice + 1}) {clave}: {valor}")      #de esta manera asiganos una llave y lo que el usuario ingrese al momento de imprimir el resultado
-
-
             # print(f" Nombre: {tarea['Tarea']}")
             # print(f"Categoria: {tarea['Categoria']}")
             # print(f"Estado: {tarea['Estado']}")
@@ -82,6 +82,3 @@ def listar_tareas(datos_guardados):
     #     print(f"{i + 1}. {tareas}") #me muestra todas las tareas
 
 
-def filtrar_tareas(datos_guardados):
-    for i in range(datos_guardados):
-        pass

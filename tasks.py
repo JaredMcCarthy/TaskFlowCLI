@@ -9,10 +9,10 @@ def agregar_tareas():
 
     while True:
         estado = input("Esta completada la tarea? si/no \n")  #verifica si esta completada o no
-        if estado == ["si"]:
-            continue
-        elif estado == ["no"]:
-            continue
+        if estado == "si":
+            break
+        elif estado == "no":
+            break
         else:
             print("Porfavor, escriba si o no.")
 
@@ -28,12 +28,15 @@ def agregar_tareas():
 
 
 def listar_tareas():
-    for usuario in datos_globales_dicc:  #en hori muestra los datos guardados.
-        print(usuario)
+    if not datos_globales_dicc:
+        print("No hay datos agregados.")
+    else:
+        for usuario in datos_globales_dicc:  #en hori muestra los datos guardados.
+            print(usuario)
 
 def tareas_completadas():
     for datos in datos_globales_dicc:
-        if datos['estado'] == ['si']:
+        if datos['estado'] == 'si':
             print(f"Nombre: {datos['nombre']}")
             print(f"Descripcion: {datos['categoria']}")
             print(f"Prioridad: {datos['prioridad']}")
@@ -45,7 +48,7 @@ def tareas_pendientes():
             print(f"Nombre: {datos['nombre']}")
             print(f"Descripcion: {datos['categoria']}")
             print(f"Prioridad: {datos['prioridad']}")
-            print(f"Estado: {datos['datos']}")
+            print(f"Estado: {datos['estado']}")
 
 
 def filtrar_tareas(datos_guardados):

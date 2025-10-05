@@ -1,46 +1,78 @@
-# esta es una lista global pero diccionario
-datos_guardados = {}
-# lista_secundaria = []   #para ver si muestro algo de completados esos datos
-#solo por si acaso mejor eliminemos eso y dejemos una lista global por si acaso
 
-def agregar_tareas(datos_guardados):
-    nombre = input("Inserte el nombre de su tarea.")
-    categoria = input("Inserte el categoria de su tarea.")
+#aqui se estan guardando los datos que el usuario introduce
+datos_globales_dicc = []
+
+def agregar_tareas():
+    nombre = input("Ingrese el nombre de la tarea.\n")
+    categoria = input("Ingrese la categoria de la tarea. \n")
+    prioridad = input("Prioridad: Alta / Baja \n")
+
+    while True:
+        estado = input("Esta completada la tarea? si/no \n")  #verifica si esta completada o no
+        if estado == ["si"]:
+            continue
+        elif estado == ["no"]:
+            continue
+        else:
+            print("Porfavor, escriba si o no.")
+
+    nuevo_usuario = {
+        "nombre": nombre,
+        "categoria": categoria,
+        "prioridad": prioridad,
+        "estado": estado
+    }
+
+    datos_globales_dicc.append(nuevo_usuario)
+    print("Tarea ha sido agregada.")
 
 
-def tareas_completadas(t_completado):
-        global tareas_hechas
-        r_competada = input("Quieres ver todas las tareas completadas? S/N\n")
+def listar_tareas():
+    for usuario in datos_globales_dicc:  #en hori muestra los datos guardados.
+        print(usuario)
 
-        if r_competada == 'S':
-            tareas_completadas(t_completado)
+def tareas_completadas():
+    for datos in datos_globales_dicc:
+        if datos['estado'] == ['si']:
+            print(f"Nombre: {datos['nombre']}")
+            print(f"Descripcion: {datos['categoria']}")
+            print(f"Prioridad: {datos['prioridad']}")
+            print(f"Estado: {datos['datos']}")
 
-            tareas_hechas = (tarea for tarea in datos_guardados if tarea['estado'] == 'C')
-
-        if not tareas_hechas:
-            print("No hay tareas completadas.")
-            return
-        for i, tarea in enumerate(tareas_hechas, 1):
-            print(f"{i}, {tarea['Tarea']} - Categoria: {tarea['Categoria']} - Prioridad: {tarea['prioridad']} - Estado: {tarea['estado']}")
-
-
-def listar_tareas(datos_guardados):
-    if not datos_guardados:
-        print("No hay datos guardados.")
-    else:
-        for indice, (clave, valor) in enumerate(datos_guardados.items()):
-            print(f" {indice + 1}) {clave}: {valor}")      #de esta manera asiganos una llave y lo que el usuario ingrese al momento de imprimir el resultado
-
+def tareas_pendientes():
+    for datos in datos_globales_dicc:
+        if datos['estado'] == ['no']:
+            print(f"Nombre: {datos['nombre']}")
+            print(f"Descripcion: {datos['categoria']}")
+            print(f"Prioridad: {datos['prioridad']}")
+            print(f"Estado: {datos['datos']}")
 
 
 def filtrar_tareas(datos_guardados):
-    for i in range(datos_guardados):
-        pass
+    pass
+
+
+
+
 
     # lista_secundaria.append(n_tarea)
     # lista_secundaria.append(c_tarea)
     # lista_secundaria.append(p_tarea)
     # lista_secundaria.append(e_tarea)
+
+
+
+    # if not lista_tarea:
+    #     print("No hay datos guardados.")
+    # else:
+    #     for indice, (clave, valor) in enumerate(lista_tareas.items()):
+    #         print(f" {indice + 1}) {clave}: {valor}")      #de esta manera asiganos una llave y lo que el usuario ingrese al momento de imprimir el resultado
+    #
+
+
+
+
+
 
 
 

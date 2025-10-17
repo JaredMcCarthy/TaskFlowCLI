@@ -54,7 +54,7 @@ def tareas_pendientes():
 def filtrar_tareas(datos_guardados):
     pass
 
-
+#ahora vamos a usar esta nadamas para subir a git y el otro a programar.
 
 
 

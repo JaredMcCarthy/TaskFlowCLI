@@ -2,15 +2,17 @@
 
 ## About
 
-TaskFlowCLI is a simple Python project that runs directly from the terminal.  
-It helps manage basic tasks like adding, listing, and marking them as done.  
-All data is stored in local text files, keeping it lightweight and easy to use.
+TaskFlowCLI is a simple Python project that runs directly from the terminal.
 
-The goal is to eventually turn it into a small command-line assistant capable of automating actions, opening apps, or launching websites right from the terminal.
+- It helps manage basic tasks like adding, listing, and marking them as done.  
+- All data is stored in local text files, keeping it lightweight and easy to use.
+
+The goal is to eventually turn it into a small command-line assistant capable of automating
+actions, opening apps, or launching websites right from the terminal.
 
 ## Current Features
 
-- Add, edit, delete, and list tasks
+- Add, edit, delete, and list tasks, list categories, pretty simple.
 - Mark tasks as completed or pending
 
 ## Future Plans

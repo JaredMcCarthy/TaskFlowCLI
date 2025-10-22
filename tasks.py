@@ -1,6 +1,8 @@
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
 
+datos_prioridad = []
+
 
 def agregar_tareas():
     nombre = input("Ingrese el nombre de la tarea.\n")
@@ -65,8 +67,14 @@ def tareas_pendientes():
                 continue
 
 def filtrar_tareas():
-    pass
+    if not datos_globales_dicc:
+        print("No hay tareas con prioridad agregadas.")
+    else:
+        for i in datos_globales_dicc:
+            if i['prioridad'] == ['Alta', 'alta']:
+                print(i)
+        for i in datos_globales_dicc:
+            if i['prioridad'] == ['Baja', 'baja']:
+                print(i)
 
-
-
-
+#revisar el ultimo error hecho en github

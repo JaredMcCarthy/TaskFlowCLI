@@ -1,4 +1,4 @@
-from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pendientes
+from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pendientes, filtrar_tareas
 import sys #exportando funcion para salir del programa
 
 import tasks
@@ -9,6 +9,7 @@ def mostra_menu():
     print("2 - Mostrar las tareas")
     print("3 - Tareas Completadas")
     print("4 - Tareas pendientes")
+    print("5 - Filtrar por prioridad")
     print("0 - Salir.")
 
 
@@ -28,6 +29,8 @@ def main():
             tareas_completadas()
         elif opcion == '4':
             tareas_pendientes()
+        elif opcion == '5':
+            filtrar_tareas()
         elif opcion == '0':
             print("Saliendo del programa...")
             sys.exit()  #sale del programa

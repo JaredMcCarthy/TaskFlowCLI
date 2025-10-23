@@ -2,7 +2,7 @@ from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pend
 import sys #exportando funcion para salir del programa
 
 import tasks
-
+3
 def mostra_menu():
     print("\n--- Menú Principal ---")
     print("1 - Agregar tareas")

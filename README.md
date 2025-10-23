@@ -1,42 +1,44 @@
-# TaskFlowCLI  
+# TaskFlowCLI
 
-## About  
-TaskFlowCLI is a Python project that runs directly from the terminal without taking significant memory. The goal is to build a lightweight command line assistant capable of handling tasks and automating processes.  
+## About
 
-## Current Features  
-- Add tasks  
-- Edit tasks  
-- Delete tasks  
-- List tasks  
+TaskFlowCLI is a simple Python project that runs directly from the terminal.
 
-## Future Plans  
-- Run applications without opening them manually  
-- Launch websites  
-- Open files and store notes  
-- Automate daily workflows directly from a single command  
+- It helps manage basic tasks like adding, listing, and marking them as done.  
+- All data is stored in local text files, keeping it lightweight and easy to use.
 
-## Quick Start  
-Clone the repository and run it with Python:  
+The goal is to eventually turn it into a small command-line assistant capable of automating
+actions, opening apps, or launching websites right from the terminal.
+
+## Current Features
+
+- Add, edit, delete, and list tasks, list categories, pretty simple.
+- Mark tasks as completed or pending
+
+## Future Plans
+
+- Automate small tasks (like opening programs or websites)
+- Add note support
+- Explore AI or database integrations
+
+## Quick Start
 ```bash
-git clone https://github.com/jaredmccarthy/TaskFlowCLI.git
+git clone https://github.com/JaredMcCarthy/TaskFlowCLI.git
 cd TaskFlowCLI
 python taskflow.py
 ```
 
-# Contributing to Command Line Interface
+## Contributing
 
-First of all, thanks for your interest in contributing!  
+Contributions are welcome!
 
-## How to Contribute  
-1. Fork the repository  
-2. Create a new branch for your feature or fix  
-3. Commit your changes with clear messages  
-4. Push to your branch  
-5. Open a Pull Request  
+- Fork the repository
+- Create a new branch
+- Commit your changes
+- Open a pull request
 
-## Guidelines  
-- Keep your code clean and simple  
-- Try to write clear commit messages  
-- Be respectful and collaborative  
+Please keep the code simple and readable.
 
-This project is still in development, so contributions of any size (ideas, suggestions, code) are welcome.  
+## License
+
+This project is licensed under the MIT License.

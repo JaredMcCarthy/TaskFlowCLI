@@ -67,19 +67,13 @@ def tareas_pendientes():
                 continue
 
 def filtrar_tareas():
-    while True:
-        user_filter = input("Que tareas que prioridad te gustaria ver? A/B \n")
-
-        if user_filter == "A":
-            prioridades_altas = [item for item in datos_globales_dicc if item['prioridad' == 'alta']]
-            return prioridades_altas
-        elif user_filter == 'B':
-            prioridad_bajas = [item for item in datos_globales_dicc if item['prioridad' == 'baja']]
-            return prioridad_bajas
-        break
+    if not datos_globales_dicc:
+        print("No hay datos guardados por el momento.")
+    else:
+        for tarea in datos_globales_dicc:
+            print(f"Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
 
 
-#revisar el ultimo error hecho en github
 
 
 

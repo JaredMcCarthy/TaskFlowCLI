@@ -1,9 +1,10 @@
+
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
 
-datos_prioridad = []
 
 
+#Funcion principal para agg info del usuario.
 def agregar_tareas():
     nombre = input("Ingrese el nombre de la tarea.\n")
     categoria = input("Ingrese la categoria de la tarea. \n")
@@ -26,6 +27,7 @@ def agregar_tareas():
         else:
             print("Porfavor, escriba si o no.")
 
+    #Guarda los inputs al inicio aqui
     nuevo_usuario = {
         "nombre": nombre,
         "categoria": categoria,
@@ -33,10 +35,14 @@ def agregar_tareas():
         "estado": estado
     }
 
+
+    #Junta la info por mientras en una variable global
     datos_globales_dicc.append(nuevo_usuario)
     print("Tarea ha sido agregada.")
 
 
+
+#Muestra todas las tareas agregadas.
 def listar_tareas():
     if not datos_globales_dicc:
         print("No hay datos agregados.")
@@ -45,6 +51,7 @@ def listar_tareas():
             print(usuario)
 
 
+#Muestras las tareas que completaron
 def tareas_completadas():
     if not datos_globales_dicc:
         print("No hay tareas completadas agregadas.")
@@ -56,6 +63,7 @@ def tareas_completadas():
                 break
 
 
+#Solamente muestra las que todavia no esta completadas
 def tareas_pendientes():
     if not datos_globales_dicc:
         print("No hay tareas pendientes agregadas.")
@@ -66,14 +74,27 @@ def tareas_pendientes():
             else:
                 continue
 
+
+#Esta funcion filtra las prioridades
 def filtrar_tareas():
     if not datos_globales_dicc:
         print("No hay datos guardados por el momento.")
     else:
-        for tarea in datos_globales_dicc:
-            print(f"Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
+        for tarea, i in datos_globales_dicc:
+            print(f"{i}, Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
 
 
+
+def cambiar_estado():
+    while True:
+        confirmacion = input("Desea cambiar el estado de una tarea? ")
+
+        if confirmacion  == 'no':
+            confirmacion = False
+            print("Regresando a inicio")
+            break
+        else:
+            pass
 
 
 

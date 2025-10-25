@@ -13,7 +13,8 @@ actions, opening apps, or launching websites right from the terminal.
 ## Current Features
 
 - Add, edit, delete, and list tasks, list categories, pretty simple.
-- Mark tasks as completed or pending
+- Mark tasks as completed or pending.
+- Program is able to change status of every tasks.
 
 ## Future Plans
 

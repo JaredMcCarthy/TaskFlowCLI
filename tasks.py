@@ -1,6 +1,10 @@
 
+import uuid
+
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
+
+lista_id = []
 
 
 
@@ -27,18 +31,33 @@ def agregar_tareas():
         else:
             print("Porfavor, escriba si o no.")
 
+    while True:
+        confirmacion_id = input("Desea usted asignarle un ID unico a la tarea. ")
+        if confirmacion_id == 'si':
+            uniqueid = uniqueid.uuid()
+            lista_id.append(uniqueid)
+            print(f"El ID de esta tarea es: {uniqueid}")
+            break
+
+
+
+
+            #Esta parte de aqui es basicamente una confirmacion de los id unicos que asignaremos.
+
+
     #Guarda los inputs al inicio aqui
     nuevo_usuario = {
         "nombre": nombre,
         "categoria": categoria,
         "prioridad": prioridad,
-        "estado": estado
+        "estado": estado,
     }
 
 
     #Junta la info por mientras en una variable global
     datos_globales_dicc.append(nuevo_usuario)
     print("Tarea ha sido agregada.")
+
 
 
 
@@ -80,8 +99,8 @@ def filtrar_tareas():
     if not datos_globales_dicc:
         print("No hay datos guardados por el momento.")
     else:
-        for tarea, i in datos_globales_dicc:
-            print(f"{i}, Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
+        for i, tarea in datos_globales_dicc:
+            print(f"{i+1}, Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
 
 
 

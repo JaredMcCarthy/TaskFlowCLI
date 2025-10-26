@@ -1,5 +1,14 @@
 #Codigo de aqui para abajo es para nada mas por si acaso y pruebas que hicimos antes de hacerlo funcionar.
 
+#Codigo de github que puede ser util
+
+#Este es por si ocupas actualizar cosas que no tienes loca
+
+#  git pull origin main --rebase
+
+# git push origin main
+
+
 
 
 #ahora vamos a usar esta nadamas para subir a git y el otro a programar.

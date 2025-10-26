@@ -1,5 +1,5 @@
 
-import uuid
+import random
 
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
@@ -32,17 +32,12 @@ def agregar_tareas():
             print("Porfavor, escriba si o no.")
 
     while True:
-        confirmacion_id = input("Desea usted asignarle un ID unico a la tarea. ")
+        confirmacion_id = input("Desea usted asignarle un ID unico a la tarea.\n")
         if confirmacion_id == 'si':
-            uniqueid = uniqueid.uuid()
-            lista_id.append(uniqueid)
-            print(f"El ID de esta tarea es: {uniqueid}")
-            break
-
-
-
-
-            #Esta parte de aqui es basicamente una confirmacion de los id unicos que asignaremos.
+            for _ in range(3):
+                lista_id.append(random.randint(1, 1000))
+                print("Se ha generado el ID {lista_id} para su tarea")
+                break
 
 
     #Guarda los inputs al inicio aqui
@@ -51,6 +46,7 @@ def agregar_tareas():
         "categoria": categoria,
         "prioridad": prioridad,
         "estado": estado,
+        "Identificador": confirmacion_id 
     }
 
 

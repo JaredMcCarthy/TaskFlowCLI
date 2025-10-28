@@ -34,8 +34,9 @@ def agregar_tareas():
             print("Porfavor, escriba si o no.")
 
     #este bucle va aumentando cuando el usuario dice si/no siempre. son los ID asignados.
+    #lo vamos a dejar asi aunque ese while se rompe por el break al inicio pero olvidalo funciona.
     while True:
-        confirmacion_id = input("Desea usted asignarle un ID unico a la tarea.\n")
+        confirmacion_id = input("Desea usted asignarle un ID unico? \n")
         if confirmacion_id == 'si':
             valor_unico = valor_unico + 1
             break

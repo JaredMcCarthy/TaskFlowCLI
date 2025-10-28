@@ -4,19 +4,21 @@ import random
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
 
-lista_id = []
+valor_unico = 0
 
 
 
 #Funcion principal para agg info del usuario.
 def agregar_tareas():
+    global valor_unico
     nombre = input("Ingrese el nombre de la tarea.\n")
     categoria = input("Ingrese la categoria de la tarea. \n")
 
     while True:
         prioridad = input("Prioridad: Alta / Baja \n")
         prioridad.lower()
-        if prioridad == ["Alta"] or prioridad == ["Baja"]:
+        #proridad era string y [] era lista y use mejor el in.
+        if prioridad.lower() in ["alta", "baja"]:  
             break
         else:
             print("Porfavor introduzca una de las opciones")
@@ -31,22 +33,25 @@ def agregar_tareas():
         else:
             print("Porfavor, escriba si o no.")
 
+    #este bucle va aumentando cuando el usuario dice si/no siempre. son los ID asignados.
     while True:
         confirmacion_id = input("Desea usted asignarle un ID unico a la tarea.\n")
         if confirmacion_id == 'si':
-            for _ in range(3):
-                lista_id.append(random.randint(1, 1000))
-                print("Se ha generado el ID {lista_id} para su tarea")
-                break
+            valor_unico = valor_unico + 1
+            break
+        elif confirmacion_id == 'no':
+            print("Necesitas agregar un ID, agregando...lol")
+            valor_unico = valor_unico + 1
+            break
 
 
     #Guarda los inputs al inicio aqui
     nuevo_usuario = {
+        "ID": valor_unico,
         "nombre": nombre,
         "categoria": categoria,
         "prioridad": prioridad,
-        "estado": estado,
-        "Identificador": confirmacion_id 
+        "estado": estado
     }
 
 
@@ -99,6 +104,7 @@ def filtrar_tareas():
             print(f"{i+1}, Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
 
 
+#de aqui para abajo necesito unos ID para saber cual eliminar y agreagar.
 
 def cambiar_estado():
     while True:
@@ -111,6 +117,8 @@ def cambiar_estado():
         else:
             pass
 
+def eliminar_tarea():
+    pass
 
 
 

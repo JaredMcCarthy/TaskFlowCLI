@@ -1,4 +1,4 @@
-
+ 
 import random
 
 #aqui se estan guardando los datos que el usuario introduce
@@ -101,25 +101,28 @@ def filtrar_tareas():
     if not datos_globales_dicc:
         print("No hay datos guardados por el momento.")
     else:
-        for i, tarea in datos_globales_dicc:
-            print(f"{i+1}, Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
+        for tarea in datos_globales_dicc:
+            print(f"ID: {tarea['ID']} , Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
 
 
-#de aqui para abajo necesito unos ID para saber cual eliminar y agreagar.
 
-def cambiar_estado():
-    while True:
-        confirmacion = input("Desea cambiar el estado de una tarea? ")
 
-        if confirmacion  == 'no':
-            confirmacion = False
-            print("Regresando a inicio")
-            break
-        else:
-            pass
 
-def eliminar_tarea():
-    pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

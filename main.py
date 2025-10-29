@@ -1,4 +1,7 @@
-from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pendientes, filtrar_tareas, cambiar_estado
+
+
+from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pendientes, filtrar_tareas
+from utils import cambiar_estado
 import sys #exportando funcion para salir del programa
 
 import tasks
@@ -42,3 +45,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

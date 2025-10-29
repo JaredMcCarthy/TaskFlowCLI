@@ -63,3 +63,16 @@
 #     return
 # for i, tareas in enumerate(datos_guardados):
 #     print(f"{i + 1}. {tareas}") #me muestra todas las tareas
+
+
+# while True:
+#     confirmacion = input("Desea cambiar el estado de una tarea? \n")
+
+#     if confirmacion.lower() in ['Si', 'si']:
+#         break
+#         for usuario in datos_globales_dicc:
+#             print(usuario)
+#             print("Inserte el ID del estado de la tarea que desea cambiar.")
+#         continue
+
+

@@ -3,37 +3,52 @@ from tasks import datos_globales_dicc
 
 from tasks import listar_tareas
 
+# ANTES DE ESCRIBIR CODIGO EN ESTE ARCHIVO PIENSA:
+# Y TMB DECILO EN VOS ALTA JARED
+
+# QUE TIPO DE DATO ESTOY ITERANDO? 
+# ESTOY ACCEDIENDO POR INDICE O POR CLAVE?
+
+# RECORDA EL DOLOR DE HUEVOS QUE FUE HACER ESTAS DOS FUNCIONES DE ABAJO LOL
+
 
 def cambiar_estado():
 	confirmacion = input("Desea cambiar el estado de una tarea? \n")
 
+
 	listar_tareas()
 	req_id = int(input("Ingrese el numero de tarea que quiere cambiar \n"))
+	encontrado = False
 
-	for i in range(int(datos_globales_dicc)):
-		if i['ID'] == req_id:
-			if datos_globales_dicc[i]['estado'] == 'si':
-				datos_globales_dicc[i]['estado'] == 'no'
+	#lo mejor seria recorrer por el elemento directamente
+	for tarea in datos_globales_dicc:
+		if tarea['ID'] == req_id:
+			encontrado = True
+			if tarea['estado'] == 'si':
+				tarea['estado'] = 'no'
 			else:
-				datos_globales_dicc[i]['estado'] == 'si'
+				tarea['estado'] = 'si'
 			print('Estado cambiado con exito.')
 			break
-	if not datos_globales_dicc[i]['estado']:
+	if not encontrado:
 		print("No se encontro la tarea.")
-
 
 
 def eliminar_tareas():
 	listar_tareas()
-	if datos_globales_dicc:
-		try:
-			indice = int(input("Ingrese el numero de la tarea a eliminar: "))
-			if 0 <= indice < len(datos_globales_dicc):
-				tarea_eliminada = datos_globales_dicc.pop(indice)
-				print(f"Tarea {tarea_eliminada} eliminada")
-			else:
-				print("Numero de tarea no valido.")
-		except ValueError:
-				print("Entrada no valida. Poorfa ingrese un numero.")
+	req_id2 = int(input('Ingrese el numero de tarea que quiere eliminar'))
+	encontrado2 = False
+
+	for tarea2 in datos_globales_dicc:
+		if tarea2['ID'] == req_id2:
+			encontrado2 = True
+			datos_globales_dicc.remove(tarea2) #mejor porque ya se el ID
+			print("Tarea eliminada con exito.")
+			break
+
+	if not encontrado2:
+		print("No hay ningun numero con esa tarea.")
+
+
 
 

@@ -96,18 +96,26 @@ def tareas_pendientes():
                 continue
 
 
+
+#CODIGO HECHO PARA INPO EN EL FUTURO DEL MANEJO DE DATOS.
+# def ordenar_tareas():
+#     lista_ordenada = sorted(datos_globales_dicc, key=lambda x: 0 if x['prioridad'] == 'alta' else 1)
+#     prioridades = {'alta': 0, 'media': 1, 'baja': 2}
+
+
+
 #Esta funcion filtra las prioridades
 def filtrar_tareas():
-    if not datos_globales_dicc:
-        print("No hay datos guardados por el momento.")
-    else:
-        for tarea in datos_globales_dicc:
-            print(f"ID: {tarea['ID']} , Nombre: {tarea['nombre']}, Tipo: {tarea['prioridad']}")
+    #usamos lambda aqui para identificar las q son altas les asignamos 0 y las bajas uno asi iran primero las altas.
+    tarea_ordenadas = sorted(datos_globales_dicc, key=lambda x: 0 if x['prioridad'].lower() == 'alta' else 1)
 
+    if not tarea_ordenadas:
+        print("No hay datos guardados.")
+        return
 
-
-
-
+    print("Lista de Tareas")
+    for tarea in tarea_ordenadas:
+        print(f"ID: {tarea['ID']}, Nombre: {tarea['nombre']}, Prioridad: {tarea['prioridad']}")
 
 
 

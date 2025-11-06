@@ -48,7 +48,7 @@ Contributions are welcome!
 - Commit your changes
 - Open a pull request
 
-Please keep the code simple and readable.
+Please keep the code simple and readable and thank you for contribute.
 
 ## License
 This project is licensed under the MIT License.

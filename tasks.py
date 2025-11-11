@@ -15,14 +15,12 @@ def agregar_tareas():
     categoria = input("Ingrese la categoria de la tarea. \n")
 
     while True:
-        prioridad = input("Prioridad: Alta / Baja \n")
-        prioridad.lower()
+        prioridad = input("Prioridad: Alta / Baja \n").lower()
         #proridad era string y [] era lista y use mejor el in.
-        if prioridad.lower() in ["alta", "baja"]:  
+        if prioridad in ["alta", "baja"]:
             break
-        else:
-            print("Porfavor introduzca una de las opciones")
-            break
+        print("Porfavor introduzca una de las opciones.")
+        #eliminamos el break mejor mucha paja la vdd
 
     while True:
         estado = input("Esta completada la tarea? si/no \n")  #verifica si esta completada o no

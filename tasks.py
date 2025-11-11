@@ -80,8 +80,6 @@ def tareas_completadas():
         for usuario in datos_globales_dicc:
             if usuario['estado'] == 'si':
                 print(usuario)
-            else:
-                break
 
 
 #Solamente muestra las que todavia no esta completadas

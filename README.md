@@ -1,5 +1,10 @@
 # TaskFlowCLI
 
+## Updated
+- I am currently working on a new version (v1.2) for CLI.
+- This will have cleaner code, faster data manages and new functionalities.
+-  Any Collaboration will be appreciate!
+
 ## About
 TaskFlowCLI is a Python project that runs directly from your PC terminal.
 

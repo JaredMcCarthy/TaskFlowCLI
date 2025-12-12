@@ -1,10 +1,16 @@
  
-import random
+import datetime
+import uuid
+import uuid
 
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
 
 valor_unico = 0
+
+#fechas que se creo la tarea
+ahora = datetime.datetime.now()
+fecha_formateada = ahora.strftime("%d/%m/%Y")
 
 
 
@@ -12,6 +18,7 @@ valor_unico = 0
 def agregar_tareas():
     global valor_unico
     nombre = input("Ingrese el nombre de la tarea.\n")
+    descripcion = input("Ingrese una Descripcion. \n")
     categoria = input("Ingrese la categoria de la tarea. \n")
 
     while True:
@@ -36,21 +43,24 @@ def agregar_tareas():
     while True:
         confirmacion_id = input("Desea usted asignarle un ID unico? \n")
         if confirmacion_id == 'si':
-            valor_unico = valor_unico + 1
+            res = [str(uuid.uuid4()) for _ in range(1)]
             break
         elif confirmacion_id == 'no':
             print("Necesitas agregar un ID, agregando...lol")
-            valor_unico = valor_unico + 1
+            res = [str(uuid.uuid4()) for _ in range(1)]
             break
 
 
     #Guarda los inputs al inicio aqui
     nuevo_usuario = {
-        "ID": valor_unico,
+        "ID": res,
         "nombre": nombre,
+        "descripcion": descripcion,
         "categoria": categoria,
         "prioridad": prioridad,
-        "estado": estado
+        "estado": estado,
+        "fecha_creaacion": fecha_formateada,
+        "fecha_completado": None
     }
 
 
@@ -114,8 +124,8 @@ def filtrar_tareas():
         print(f"ID: {tarea['ID']}, Nombre: {tarea['nombre']}, Prioridad: {tarea['prioridad']}")
 
 
-
-
+def editar_tarea():
+    pass
 
 
 

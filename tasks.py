@@ -13,7 +13,7 @@ ahora = datetime.datetime.now()
 fecha_formateada = ahora.strftime("%d/%m/%Y")
 
 
-
+#info exta
 #Funcion principal para agg info del usuario.
 def agregar_tareas():
     global valor_unico

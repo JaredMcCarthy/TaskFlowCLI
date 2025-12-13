@@ -1,7 +1,6 @@
  
 import datetime
 import uuid
-import uuid
 
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
@@ -124,8 +123,13 @@ def filtrar_tareas():
         print(f"ID: {tarea['ID']}, Nombre: {tarea['nombre']}, Prioridad: {tarea['prioridad']}")
 
 
-def editar_tarea():
-    pass
+
+
+
+
+
+
+
 
 
 

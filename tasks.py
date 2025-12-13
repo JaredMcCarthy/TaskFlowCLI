@@ -1,6 +1,6 @@
- 
 import datetime
 import uuid
+
 
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
@@ -49,7 +49,6 @@ def agregar_tareas():
             res = [str(uuid.uuid4()) for _ in range(1)]
             break
 
-
     #Guarda los inputs al inicio aqui
     nuevo_usuario = {
         "ID": res,
@@ -62,12 +61,9 @@ def agregar_tareas():
         "fecha_completado": None
     }
 
-
     #Junta la info por mientras en una variable global
     datos_globales_dicc.append(nuevo_usuario)
     print("Tarea ha sido agregada.")
-
-
 
 
 #Muestra todas las tareas agregadas.
@@ -101,12 +97,10 @@ def tareas_pendientes():
                 continue
 
 
-
 #CODIGO HECHO PARA INPO EN EL FUTURO DEL MANEJO DE DATOS.
 # def ordenar_tareas():
 #     lista_ordenada = sorted(datos_globales_dicc, key=lambda x: 0 if x['prioridad'] == 'alta' else 1)
 #     prioridades = {'alta': 0, 'media': 1, 'baja': 2}
-
 
 
 #Esta funcion filtra las prioridades
@@ -123,31 +117,11 @@ def filtrar_tareas():
         print(f"ID: {tarea['ID']}, Nombre: {tarea['nombre']}, Prioridad: {tarea['prioridad']}")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def editar_tarea():
+    try:
+        n = input("Ingrese el ID de la tarea que desea editar\n")
+    except NameError:
+        print("Ese ID no ha sido definido todavia.")
+    except:
+        print("Porfavor ingrese valido.")
 

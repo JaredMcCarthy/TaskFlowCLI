@@ -1,8 +1,9 @@
 import os
-import sys
+import platform
 
-from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pendientes, filtrar_tareas
-from utils import cambiar_estado, eliminar_tareas, editar_tarea
+
+from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pendientes, filtrar_tareas, editar_tarea
+from utils import cambiar_estado, eliminar_tareas
 import sys  #exportando funcion para salir del programa
 
 import tasks
@@ -32,31 +33,26 @@ import tasks
 
 
 def limpiar_pantalla():
-    """Limpia la pantalla del terminal este codigo"""
-    try:
-        if os.name == 'nt':  #este es para windows
-            os.system('cls')
-        else:
-            os.system('clear')  #este para mac o linux por si acaso
-    except:
-        print('\n' * 100)
-        #lo use por el try y si falla pues me las imrpime en blanco.
+    if platform.system() == "Windows": #identifica windows
+        os.system('cls')
+    else:
+        os.system('clear') #este identifica linux/mac
 
 
 def mostrar_menu():
     limpiar_pantalla()
     # logo_inicio()
-    print("\n╔══════════════════════════════════╗")
-    print("║       --- Menú Principal ---       ║")
-    print("╠════════════════════════════════════╣")
-    print("║  1 - Agregar tareas                ║")
-    print("║  2 - Mostrar las tareas            ║")
-    print("║  3 - Tareas Completadas            ║")
-    print("║  4 - Tareas pendientes             ║")
-    print("║  5 - Filtrar por prioridad         ║")
-    print("║  6 - Ir al Menu Avanzado           ║")
-    print("║  0 - Salir                         ║")
-    print("╚════════════════════════════════════╝")
+    print("\n  ╔══════════════════════════════════╗")
+    print("  ║       --- Menú Principal ---     ║")
+    print("  ╠══════════════════════════════════╣")
+    print("  ║  1 - Agregar tareas              ║")
+    print("  ║  2 - Mostrar las tareas          ║")
+    print("  ║  3 - Tareas Completadas          ║")
+    print("  ║  4 - Tareas pendientes           ║")
+    print("  ║  5 - Filtrar por prioridad       ║")
+    print("  ║  6 - Ir al Menu Avanzado         ║")
+    print("  ║  0 - Salir                       ║")
+    print("  ╚══════════════════════════════════╝")
     print()
 
 
@@ -77,7 +73,7 @@ def main():
         elif opcion == '5':
             filtrar_tareas()
         elif opcion == '6':
-            menu_avanzado()
+            menu_2()
         elif opcion == '0':
             print("Saliendo del programa...")
             sys.exit()  #sale del programa
@@ -85,7 +81,7 @@ def main():
 
 def menu_avanzado():
     limpiar_pantalla()
-    print("\n╔══════════════════════════════════╗")
+    print("\n  ╔══════════════════════════════════╗")
     print("  ║       --- Menú Avanzado  ---     ║")
     print("  ╠══════════════════════════════════╣")
     print("  ║  1 - Cambiar Estado de una Tarea ║")
@@ -98,9 +94,9 @@ def menu_avanzado():
 
 def menu_2():
     limpiar_pantalla()
-    menu_avanzado()
     while True:
-        opciones2 = input("Seleccione una de las opciones.")
+        menu_avanzado()
+        opciones2 = input("Seleccione una de las opciones.\n")
 
         if opciones2 == '1':
             cambiar_estado()
@@ -109,7 +105,7 @@ def menu_2():
         elif opciones2 == '3':
             editar_tarea()
         elif opciones2 == '0':
-            mostrar_menu()
+            break
 
 
 if __name__ == "__main__":

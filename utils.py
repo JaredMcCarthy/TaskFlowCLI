@@ -49,6 +49,14 @@ def eliminar_tareas():
 	if not encontrado2:
 		print("No hay ningun numero con esa tarea.")
 
+def editar_tarea():
+	listar_tareas()
+
+	while True:
+		n = input("Ingrese el ID de la tarea que desea editar.")
+
+		print(n)
+		print("Codigo hasta el momento ha funcionado normal.")
 
 
 

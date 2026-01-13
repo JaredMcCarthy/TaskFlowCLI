@@ -17,7 +17,7 @@ def cambiar_estado():
 
 
 	listar_tareas()
-	req_id = int(input("Ingrese el numero de tarea que quiere cambiar \n"))
+	req_id = input("Ingrese el numero de tarea que quiere cambiar \n")
 	encontrado = False
 
 	#lo mejor seria recorrer por el elemento directamente

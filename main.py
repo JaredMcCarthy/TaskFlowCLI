@@ -91,7 +91,6 @@ def menu_avanzado():
     print("  ╚══════════════════════════════════╝")
     print()
 
-
 def menu_2():
     limpiar_pantalla()
     while True:

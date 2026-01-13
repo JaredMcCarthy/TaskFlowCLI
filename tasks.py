@@ -1,7 +1,6 @@
 import datetime
 import uuid
 
-
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
 
@@ -42,12 +41,14 @@ def agregar_tareas():
     while True:
         confirmacion_id = input("Desea usted asignarle un ID unico? \n")
         if confirmacion_id == 'si':
-            res = [str(uuid.uuid4()) for _ in range(1)]
+            res = str(uuid.uuid4())
             break
         elif confirmacion_id == 'no':
             print("Necesitas agregar un ID, agregando...lol")
-            res = [str(uuid.uuid4()) for _ in range(1)]
+            res = str(uuid.uuid4())
             break
+    # le quitamos el for y los [] arriba a los res = str... porque no encontraba los datos en
+    # mis otras funciones, aclaro por si se me olvida.
 
     #Guarda los inputs al inicio aqui
     nuevo_usuario = {
@@ -118,10 +119,37 @@ def filtrar_tareas():
 
 
 def editar_tarea():
-    try:
-        n = input("Ingrese el ID de la tarea que desea editar\n")
-    except NameError:
-        print("Ese ID no ha sido definido todavia.")
-    except:
-        print("Porfavor ingrese valido.")
+    n = input("Ingrese el   ID de la tarea que desea editar\n")
+    encontrado = False
 
+    for credencial in datos_globales_dicc:
+        if credencial['ID'] == n:
+            encontrado = True
+            print("Escribe el campo en minuscula sin espacion ni signos.")
+            edicion = input("Introduzca el area que quiere editar de la tarea. \n")
+            #no recorrer otra vez porque solo lo haces una vez arriba cuando buscas el ID basicamente
+            #tene en cuenta esta funcion pq creo que nos puede servir para despues
+            if edicion == "nombre":
+                nom_edicion = input("Que nombre quiere ponerle a su tarea? \n ")
+                credencial['nombre'] = nom_edicion
+                print("Campo editado con exito!")
+
+            elif edicion == "descripcion":
+                des_edicion = input("Que descripcion quiere agregarle? \n")
+                credencial['descripcion'] = des_edicion
+                print("Descripcion editada con exito!")
+
+            elif edicion == "categoria":
+                ca_edicion = input("Que categoria quiere ponerle a su tarea? ")
+                credencial['categoria'] = ca_edicion
+                print("Categoria editada con exito!")
+
+    if not encontrado:
+        print("No se encontro la tarea.")
+
+
+# Para cuando regreses seria bueno que el campo de fecha_compleado cambiara cuando el usuario
+# desee editar el estado, si el estado al crear la tarea es 'Si' pone esa fecha pero si lo edita
+# entonces que quite la fecha pero cuando edite la fecha de compleado cambie a ese dia.
+
+#aqui mismo en esta funcion de arriba.

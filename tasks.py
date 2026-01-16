@@ -67,6 +67,15 @@ def agregar_tareas():
     print("Tarea ha sido agregada.")
 
 
+def confirmarcion_fecha():
+    for pollo in datos_globales_dicc:
+        if pollo['estado'] == 'si'.lower():
+            actualizacion = pollo['estado'] = fecha_formateada
+            datos_globales_dicc.append(actualizacion)
+        elif pollo['estado'] == 'no'.lower():
+            break
+            # hasta este punto realmente no se q hacer si el usuario deja no, creo que seria el break por lo mismo no?
+
 #Muestra todas las tareas agregadas.
 def listar_tareas():
     if not datos_globales_dicc:
@@ -119,6 +128,7 @@ def filtrar_tareas():
 
 
 def editar_tarea():
+    listar_tareas()
     n = input("Ingrese el   ID de la tarea que desea editar\n")
     encontrado = False
 

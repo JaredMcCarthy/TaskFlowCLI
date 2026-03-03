@@ -15,6 +15,7 @@ fecha_formateada = ahora.strftime("%d/%m/%Y")
 #Funcion principal para agg info del usuario.
 def agregar_tareas():
     global valor_unico
+
     nombre = input("Ingrese el nombre de la tarea.\n")
     descripcion = input("Ingrese una Descripcion. \n")
     categoria = input("Ingrese la categoria de la tarea. \n")
@@ -34,19 +35,28 @@ def agregar_tareas():
         elif estado == "no":
             break
         else:
-            print("Porfavor, escriba si o no.")
+            print("Porfavor escriba Si o no.")
+
 
     #este bucle va aumentando cuando el usuario dice si/no siempre. son los ID asignados.
     #lo vamos a dejar asi aunque ese while se rompe por el break al inicio pero olvidalo funciona.
     while True:
-        confirmacion_id = input("Desea usted asignarle un ID unico? \n")
-        if confirmacion_id == 'si':
-            res = str(uuid.uuid4())
-            break
-        elif confirmacion_id == 'no':
-            print("Necesitas agregar un ID, agregando...lol")
-            res = str(uuid.uuid4())
-            break
+        try:
+            confirmacion_id = input("Desea usted asignarle un ID unico? \n")
+            if confirmacion_id == 'si':
+                res = str(uuid.uuid4())
+                break
+            elif confirmacion_id == 'no':
+                print("Necesitas agregar un ID, agregando...lol\n")
+                res = str(uuid.uuid4())
+                break
+            else:
+                raise ValueError("Entrada no concedida.\n") #este viene incluido para que pueda aparecer el except.
+        except ValueError:
+            print("Introduzca 'si' o 'no' nada mas.")
+
+
+
     # le quitamos el for y los [] arriba a los res = str... porque no encontraba los datos en
     # mis otras funciones, aclaro por si se me olvida.
 
@@ -129,7 +139,7 @@ def filtrar_tareas():
 
 def editar_tarea():
     listar_tareas()
-    n = input("Ingrese el   ID de la tarea que desea editar\n")
+    n = input("Ingrese el ID de la tarea que desea editar\n")
     encontrado = False
 
     for credencial in datos_globales_dicc:

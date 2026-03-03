@@ -37,7 +37,7 @@ def cambiar_estado():
 
 def eliminar_tareas():
     listar_tareas()
-    req_id2 = int(input('Ingrese el numero de tarea que quiere eliminar'))
+    req_id2 = input('Ingrese el numero de tarea que quiere eliminar\n') #problema en el int
     encontrado2 = False
 
     for tarea2 in datos_globales_dicc:
@@ -46,6 +46,10 @@ def eliminar_tareas():
             datos_globales_dicc.remove(tarea2)  #mejor porque ya se el ID
             print("Tarea eliminada con exito.")
             break
-
     if not encontrado2:
         print("No hay ningun numero con esa tarea.")
+
+
+
+def valida_input():
+    pass

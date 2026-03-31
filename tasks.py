@@ -112,6 +112,7 @@ def tareas_pendientes():
     else:
         for usuario in datos_globales_dicc:
             if usuario['estado'] == 'no':
+                print("No hay tareas incompletas.")
                 print(usuario)
             else:
                 continue

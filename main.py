@@ -59,24 +59,27 @@ def mostrar_menu():
 def main():
 
     while True:
-        mostrar_menu()
-        opcion = input("Seleccionar unas de las opciones \n")
+        try:
+            mostrar_menu()
+            opcion = int(input("Seleccionar unas de las opciones \n"))
 
-        if opcion == '1':
-            agregar_tareas()
-        elif opcion == '2':
-            listar_tareas()
-        elif opcion == '3':
-            tareas_completadas()
-        elif opcion == '4':
-            tareas_pendientes()
-        elif opcion == '5':
-            filtrar_tareas()
-        elif opcion == '6':
-            menu_2()
-        elif opcion == '0':
-            print("Saliendo del programa...")
-            sys.exit()  #sale del programa
+            if opcion == '1':
+                agregar_tareas()
+            elif opcion == '2':
+                listar_tareas()
+            elif opcion == '3':
+                tareas_completadas()
+            elif opcion == '4':
+                tareas_pendientes()
+            elif opcion == '5':
+                filtrar_tareas()
+            elif opcion == '6':
+                menu_2()
+            elif opcion == '0':
+                print("Saliendo del programa...")
+                sys.exit()  #sale del programa
+        except ValueError:
+            print("Ingrese solamente numeros del 0-6.")
 
 
 def menu_avanzado():
@@ -94,17 +97,20 @@ def menu_avanzado():
 def menu_2():
     limpiar_pantalla()
     while True:
-        menu_avanzado()
-        opciones2 = input("Seleccione una de las opciones.\n")
+        try:
+            menu_avanzado()
+            opciones2 = int(input("Seleccione una de las opciones.\n"))
 
-        if opciones2 == '1':
-            cambiar_estado()
-        elif opciones2 == '2':
-            eliminar_tareas()
-        elif opciones2 == '3':
-            editar_tarea()
-        elif opciones2 == '0':
-            break
+            if opciones2 == '1':
+                cambiar_estado()
+            elif opciones2 == '2':
+                eliminar_tareas()
+            elif opciones2 == '3':
+                editar_tarea()
+            elif opciones2 == '0':
+                break
+        except ValueError:
+            print("Ingrese solamente un numero del 0-3")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 import datetime
 import uuid
 
-from utils import validar_inputs
+from utils import validar_inputs, validar_estados
 
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
@@ -32,6 +32,7 @@ def agregar_tareas():
         except ValueError as err:
             print(f"Incorrecto, intente de nuevo {err}")
 
+        # ESTA ERA LA ENTIGUA FUNCION QUE TENIA, NO LA VOY A ELIMINAR POR SI ACASO QUIERO OPTIMIZAR MAS ADELANTE
 
         #proridad era string y [] era lista y use mejor el in.
         # if prioridad in ["baja", "media", "alta"]:
@@ -40,14 +41,16 @@ def agregar_tareas():
         #eliminamos el break mejor mucha paja la vdd 
 
     #esta seccion de estado debe ser eliminada para hacer la validacioin en utils.py
+
     while True:
         estado = input("Esta completada la tarea? si/no \n")  #verifica si esta completada o no
-        if estado == "si":
+
+        try:
+            estado = validar_estados(estado)
             break
-        elif estado == "no":
-            break
-        else:
-            print("Porfavor escriba Si o no.")
+        except ValueError as e:
+            print(f"Incorrecto, intente de nuevo {e}")
+
 
 
     #este bucle va aumentando cuando el usuario dice si/no siempre. son los ID asignados.

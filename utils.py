@@ -1,6 +1,8 @@
-from tasks import datos_globales_dicc
 import datetime
-from tasks import listar_tareas
+
+# No importar `tasks` al cargar este archivo: si `tasks` también importa `utils`,
+# Python no termina de inicializar `tasks` y sale ImportError (import circular).
+# Los imports de `tasks` van dentro de las funciones que los necesitan.
 
 time = datetime.datetime.now()
 hora_completed = time.strftime("%H:%M:%S")
@@ -15,6 +17,8 @@ hora_completed = time.strftime("%H:%M:%S")
 
 
 def cambiar_estado():
+    from tasks import datos_globales_dicc, listar_tareas
+
     confirmacion = input("Desea cambiar el estado de una tarea? \n")
 
     listar_tareas()
@@ -36,6 +40,8 @@ def cambiar_estado():
 
 
 def eliminar_tareas():
+    from tasks import datos_globales_dicc, listar_tareas
+
     listar_tareas()
     req_id2 = input('Ingrese el numero de tarea que quiere eliminar\n') #problema en el int
     encontrado2 = False
@@ -50,6 +56,10 @@ def eliminar_tareas():
         print("No hay ningun numero con esa tarea.")
 
 
+def validar_inputs(info_del_user):
+    normalizado = info_del_user.strip().lower()
 
-def valida_input():
-    pass
+    if normalizado not in {"baja", "media", "alta"}:
+        raise ValueError("Ingresá solo: Baja, Media o Alta.")
+
+    return normalizado

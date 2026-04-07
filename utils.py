@@ -63,3 +63,9 @@ def validar_inputs(info_del_user):
         raise ValueError("Ingresá solo: Baja, Media o Alta.")
 
     return normalizado
+
+def validar_estados(dato_usuario):
+    revision = dato_usuario.strip().lower()
+
+    if revision not in {"si", "no"}:
+        raise ValueError("Ingresa solo: No o Si")

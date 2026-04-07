@@ -61,7 +61,7 @@ def main():
     while True:
         try:
             mostrar_menu()
-            opcion = int(input("Seleccionar unas de las opciones \n"))
+            opcion = input("Seleccionar unas de las opciones \n")
 
             if opcion == '1':
                 agregar_tareas()
@@ -97,7 +97,7 @@ def menu_avanzado():
 def menu_2():
     limpiar_pantalla()
     while True:
-        try:
+        try:            
             menu_avanzado()
             opciones2 = int(input("Seleccione una de las opciones.\n"))
 

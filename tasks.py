@@ -1,6 +1,8 @@
 import datetime
 import uuid
 
+from utils import validar_inputs
+
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
 
@@ -8,7 +10,7 @@ valor_unico = 0
 
 #fechas que se creo la tarea
 ahora = datetime.datetime.now()
-fecha_formateada = ahora.strftime("%d/%m/%Y")
+fecha_formateada = ahora.strftime(" %d/%m/%Y")
 
 
 #info exta
@@ -20,14 +22,24 @@ def agregar_tareas():
     descripcion = input("Ingrese una Descripcion. \n")
     categoria = input("Ingrese la categoria de la tarea. \n")
 
+    #esta seccin de prioridad debe de ser eleiminada para hacer la validacion en utils.py
     while True:
-        prioridad = input("Prioridad: Alta / Baja \n").lower()
-        #proridad era string y [] era lista y use mejor el in.
-        if prioridad in ["alta", "baja"]:
-            break
-        print("Porfavor introduzca una de las opciones.")
-        #eliminamos el break mejor mucha paja la vdd
+        prioridad = input("Prioridad: Baja / Media / Alta \n")
 
+        try:
+            prioridad = validar_inputs(prioridad) #tecnicamente aqui viaja el dato hacia la funcion que los valida.
+            break
+        except ValueError as err:
+            print(f"Incorrecto, intente de nuevo {err}")
+
+
+        #proridad era string y [] era lista y use mejor el in.
+        # if prioridad in ["baja", "media", "alta"]:
+        #     break
+        # print("Porfavor introduzca una de las opciones.")
+        #eliminamos el break mejor mucha paja la vdd 
+
+    #esta seccion de estado debe ser eliminada para hacer la validacioin en utils.py
     while True:
         estado = input("Esta completada la tarea? si/no \n")  #verifica si esta completada o no
         if estado == "si":

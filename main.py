@@ -61,23 +61,25 @@ def main():
     while True:
         try:
             mostrar_menu()
-            opcion = input("Seleccionar unas de las opciones \n")
+            opcion = int(input("Seleccionar unas de las opciones \n"))
 
-            if opcion == '1':
+            if opcion == 1:
                 agregar_tareas()
-            elif opcion == '2':
+            elif opcion == 2:
                 listar_tareas()
-            elif opcion == '3':
+            elif opcion == 3:
                 tareas_completadas()
-            elif opcion == '4':
+            elif opcion == 4:
                 tareas_pendientes()
-            elif opcion == '5':
+            elif opcion == 5:
                 filtrar_tareas()
-            elif opcion == '6':
+            elif opcion == 6:
                 menu_2()
-            elif opcion == '0':
+            elif opcion == 0:
                 print("Saliendo del programa...")
                 sys.exit()  #sale del programa
+            else:
+                print("Opcione no valida!")
         except ValueError:
             print("Ingrese solamente numeros del 0-6.")
 
@@ -101,14 +103,16 @@ def menu_2():
             menu_avanzado()
             opciones2 = int(input("Seleccione una de las opciones.\n"))
 
-            if opciones2 == '1':
+            if opciones2 == 1:
                 cambiar_estado()
-            elif opciones2 == '2':
+            elif opciones2 == 2:
                 eliminar_tareas()
-            elif opciones2 == '3':
+            elif opciones2 == 3:
                 editar_tarea()
-            elif opciones2 == '0':
+            elif opciones2 == 0:
                 break
+            else:
+                print("Opcion no valida!")
         except ValueError:
             print("Ingrese solamente un numero del 0-3")
 

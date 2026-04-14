@@ -6,6 +6,8 @@ from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pend
 from utils import cambiar_estado, eliminar_tareas
 import sys  #exportando funcion para salir del programa
 
+from data import cargar_tareas
+
 import tasks
 
 
@@ -55,8 +57,8 @@ def mostrar_menu():
     print("  ╚══════════════════════════════════╝")
     print()
 
-
 def main():
+    tasks.datos_globales_dicc = cargar_tareas()   #llamamos la funcion de data para cargar datos incluso al cerrarse
 
     while True:
         try:

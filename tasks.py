@@ -3,6 +3,10 @@ import uuid
 
 from utils import validar_inputs, validar_estados
 
+from data import guardar_tareas
+
+
+
 #aqui se estan guardando los datos que el usuario introduce
 datos_globales_dicc = []
 
@@ -90,6 +94,8 @@ def agregar_tareas():
     #Junta la info por mientras en una variable global
     datos_globales_dicc.append(nuevo_usuario)
     print("Tarea ha sido agregada.")
+    guardar_tareas(datos_globales_dicc)        #de esta manera llamamos a la funcion que guarda los datos OJO
+
 
 
 def confirmarcion_fecha():
@@ -108,6 +114,7 @@ def listar_tareas():
     else:
         for usuario in datos_globales_dicc:  #en hori muestra los datos guardados.
             print(usuario)
+            
 
 
 #Muestras las tareas que completaron
@@ -179,6 +186,9 @@ def editar_tarea():
                 ca_edicion = input("Que categoria quiere ponerle a su tarea? ")
                 credencial['categoria'] = ca_edicion
                 print("Categoria editada con exito!")
+
+            # Guardado automático después de editar una tarea
+            guardar_tareas(datos_globales_dicc)
 
     if not encontrado:
         print("No se encontro la tarea.")

@@ -18,6 +18,7 @@ hora_completed = time.strftime("%H:%M:%S")
 
 def cambiar_estado():
     from tasks import datos_globales_dicc, listar_tareas
+    from data import guardar_tareas
 
     confirmacion = input("Desea cambiar el estado de una tarea? \n")
 
@@ -34,6 +35,7 @@ def cambiar_estado():
             else:
                 tarea['estado'] = 'si'
             print('Estado cambiado con exito.')
+            guardar_tareas(datos_globales_dicc)
             break
     if not encontrado:
         print("No se encontro la tarea.")
@@ -41,6 +43,7 @@ def cambiar_estado():
 
 def eliminar_tareas():
     from tasks import datos_globales_dicc, listar_tareas
+    from data import guardar_tareas
 
     listar_tareas()
     req_id2 = input('Ingrese el numero de tarea que quiere eliminar\n') #problema en el int
@@ -51,6 +54,7 @@ def eliminar_tareas():
             encontrado2 = True
             datos_globales_dicc.remove(tarea2)  #mejor porque ya se el ID
             print("Tarea eliminada con exito.")
+            guardar_tareas(datos_globales_dicc)
             break
     if not encontrado2:
         print("No hay ningun numero con esa tarea.")

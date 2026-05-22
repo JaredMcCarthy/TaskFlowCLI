@@ -19,7 +19,12 @@ class Tarea:
     def completar(self):
         self.estado = "completado"
         self.fecha_completado = datetime.datetime.now().strftime("%d/%m/%Y")
-    
+
+    def editar(self, **kwargs):
+        for atri, valor in kwargs.items():
+            setattr(self, atri, valor)
+
+
     #esta basicamente lo convierte a dic para json
     def to_dict(self):
         return {
@@ -48,12 +53,21 @@ class GestorTareas:
     
     def agregar(self, tarea):
         self.tareas.append(tarea)
-        self.guardar()
      
     def listar(self):
         for t in self.tareas:
             print(t.to_dict())
     
+    #de aqui se empieza la tarea 2 basicamente
+    
+    def filtrar_por_prioridad(self, prioridad_buscada):
+        return [t for t in self.tareas if t.prioridad == prioridad_buscada]
+    
+    def obtenet_por_id(self, id_tarea, **kwargs):
+        tarea = self.obtenet_por_id(id_tarea)
+        if tarea is not None:
+            tarea.editar(**kwargs)
+            self.guardar()
 
-    
-    
+
+        

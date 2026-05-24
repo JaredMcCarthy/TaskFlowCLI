@@ -1,16 +1,18 @@
 import os
 import platform
 
-
-from tasks import agregar_tareas, listar_tareas, tareas_completadas, tareas_pendientes, filtrar_tareas, editar_tarea
-from utils import cambiar_estado, eliminar_tareas
-import sys  #exportando funcion para salir del programa
-
-from data import cargar_tareas
-
-import tasks
+from models.tarea import Tarea, GestorTareas
+from data.data import cargar_tareas, guardar_tareas
 
 
+from managers.tasks import editar_tarea
+import sys
+
+
+#esta es una variable global
+gestor = None
+
+# TOMA DEMASIADO ESPACIO EL LOGO POR ESO MEJOR LO QUITE 
 # def logo_inicio():
 #     logo = r"""
 #     ╔══════════════════════════════════════════╗
@@ -57,8 +59,20 @@ def mostrar_menu():
     print("  ╚══════════════════════════════════╝")
     print()
 
+#cambiamos la carga de datos de main por este que queda mejor por las clases que importamos
 def main():
-    tasks.datos_globales_dicc = cargar_tareas()   #llamamos la funcion de data para cargar datos incluso al cerrarse
+    global gestor
+    gestor = GestorTareas()
+    tareas_dict = cargar_tareas()
+    for tarea_data in tareas_dict:
+        t = Tarea(
+            nombre=tarea_data['nombre'],
+            descripcion=tarea_data['descripcion'],
+            categoria=tarea_data['categoria'],
+            prioridad=tarea_data['prioridad'],
+            estado=tarea_data['estado']
+        )
+        gestor.tareas.append(t)
 
     while True:
         try:
@@ -66,15 +80,32 @@ def main():
             opcion = int(input("Seleccionar unas de las opciones \n"))
 
             if opcion == 1:
-                agregar_tareas()
+                nombre = input("Nombre de la tarea: ")
+                descripcion = input("Descripcion: ")
+                categoria = input("Categoria: ")
+                prioridad = input("Prioridad (alta/media/baja): ")
+                estado = input("Estado (si/no): ")
+
+                tarea_nueva = Tarea(
+                    nombre=nombre,
+                    descripcion=descripcion,
+                    categoria=categoria,
+                    prioridad=prioridad,
+                    estado=estado
+                )
+                gestor.agregar(tarea_nueva)
+
             elif opcion == 2:
-                listar_tareas()
+                gestor.listar()
             elif opcion == 3:
-                tareas_completadas()
+                gestor.listar_completadas()
             elif opcion == 4:
-                tareas_pendientes()
+                gestor.listar_pendientes()
             elif opcion == 5:
-                filtrar_tareas()
+                prioridad = input("Prioridad a filtrar (alta/media/baja)")
+                tareas = gestor.filtrar_por_prioridad(prioridad)
+                for tarea in tareas:
+                    print(tarea.to_dict())
             elif opcion == 6:
                 menu_2()
             elif opcion == 0:
@@ -106,11 +137,21 @@ def menu_2():
             opciones2 = int(input("Seleccione una de las opciones.\n"))
 
             if opciones2 == 1:
-                cambiar_estado()
+                gestor.listar()
+                id_tarea = input("ID de la tarea: ")
+                if gestor.cambiar_estado(id_tarea):
+                    print("Estado cambiado.")
+                else:
+                    print("No encontrada.")
             elif opciones2 == 2:
-                eliminar_tareas()
+                gestor.listar()
+                id_tarea = input("ID de la tarea a eliminar: ")
+                if gestor.eliminar(id_tarea):
+                    print("Eliminada.")
+                else:
+                    print("No encontrada.")
             elif opciones2 == 3:
-                editar_tarea()
+                editar_tarea(gestor)
             elif opciones2 == 0:
                 break
             else:

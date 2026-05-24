@@ -1,59 +1,41 @@
 # TaskFlowCLI
 
-## Updated
-- I am currently working on a new version (v1.2) for CLI.
-- This will have cleaner code, faster data manages and new functionalities.
--  Any Collaboration will be appreciate!
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active%20Development-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## About
-TaskFlowCLI is a Python project that runs directly from your PC terminal.
+A command-line task manager built in Python — simple, local, no dependencies.
+Actively evolving toward v2.0 with JSON persistence, OOP architecture and a modular structure.
 
-- It allows you to **manage basic tasks**: add, list, mark as completed or pending.  
-- All data is stored **locally** (currently in memory), keeping it **lightweight and easy to use**.  
-- The idea of the project is to evolve into a **command-line assistant** that can automate actions, open apps, or launch websites directly from the terminal.
+---
 
-## Current Features
-- Add, edit, delete, and list tasks.  
-- Mark tasks as **completed** or **pending**.  
-- Filter tasks by **priority** (High / Low).  
-- Automatic unique ID for each task. 
+## Features
 
-## Future Plans
-- Automate small tasks (like opening programs or websites).  
-- Add note support.  
-- Explore AI or database integrations.
+- **Add, edit, delete and list tasks** from the terminal
+- **Mark tasks** as completed or pending
+- **Filter by priority** — High or Low
+- **Auto-generated unique ID** for every task
+- **No external dependencies** — pure Python standard library
 
-## How to Run
-### Windows
-1. Open your PC terminal.  
-2. Run the `run.bat` file by double-clicking it or from the terminal: 
-3. ```bash run.bat ```
-### macOS / Linux
-1. Open your terminal.
-2. Run the run.sh file with execution permissions:
-3. ```chmod +x run.sh```
-4. ```./run.s```
-
-- You can also run it directly from Python:
-```
-python main.py   # Windows
-python3 main.py  # macOS / Linux
-```
 ## Quick Start
+
 ```bash
 git clone https://github.com/JaredMcCarthy/TaskFlowCLI.git
 cd TaskFlowCLI
-#then use run.bat or run.sh depending on your operating system
+python main.py        # Windows
+python3 main.py       # macOS / Linux
 ```
 
-## Contributing
-Contributions are welcome!
-- Fork the repository
-- Create a new branch
-- Commit your changes
-- Open a pull request
+You can also just double-click `run.bat` on Windows or run `./run.sh` on macOS/Linux.
 
-Please keep the code simple and readable and thank you for contribute.
+## What's coming in v2.0
+
+- JSON file persistence (tasks saved between sessions)
+- Full OOP rewrite with `Task` and `TaskManager` classes
+- Robust error handling and input validation
+- Clean modular structure across separate files/folders
+- Unit tests and docstrings throughout
 
 ## License
+
 This project is licensed under the MIT License.

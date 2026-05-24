@@ -1,0 +1,32 @@
+[
+    {
+        "ID": "e2ffdbd3-891d-46bd-b217-6d4781b92c06",
+        "nombre": "as",
+        "descripcion": "as",
+        "categoria": "as",
+        "prioridad": "alta",
+        "estado": null,
+        "fecha_creaacion": " 13/04/2026",
+        "fecha_completado": null
+    },
+    {
+        "ID": "67e0041d-9471-46b1-9d2d-a14ce734b496",
+        "nombre": "comida",
+        "descripcion": "comida con mi mama",
+        "categoria": "salida",
+        "prioridad": "alta",
+        "estado": null,
+        "fecha_creaacion": " 13/04/2026",
+        "fecha_completado": null
+    },
+    {
+        "ID": "85d8960f-bb68-4ec7-87bf-2403c673eeb9",
+        "nombre": "A",
+        "descripcion": "B",
+        "categoria": "C",
+        "prioridad": "alta",
+        "estado": null,
+        "fecha_creaacion": " 08/05/2026",
+        "fecha_completado": null
+    }
+]

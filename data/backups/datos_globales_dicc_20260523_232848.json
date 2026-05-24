@@ -1,0 +1,22 @@
+[
+    {
+        "ID": "46e01aa9-bdf2-4443-9409-97ad9aed637f",
+        "nombre": "Salir a correr",
+        "descripcion": "correr 5km",
+        "categoria": "running",
+        "prioridad": "alta",
+        "estado": "si",
+        "fecha_creacion": "23/05/2026",
+        "fecha_completado": null
+    },
+    {
+        "ID": "1038be62-024f-449b-815c-fb87ee8db2e4",
+        "nombre": "Salir a correr",
+        "descripcion": "10km corrida",
+        "categoria": "running",
+        "prioridad": "media",
+        "estado": "no",
+        "fecha_creacion": "23/05/2026",
+        "fecha_completado": null
+    }
+]

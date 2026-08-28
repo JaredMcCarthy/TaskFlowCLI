@@ -1,12 +1,12 @@
 [
     {
-        "ID": "46e01aa9-bdf2-4443-9409-97ad9aed637f",
-        "nombre": "Run 10km con Carnal pulpo",
-        "descripcion": "correr 5km",
-        "categoria": "running",
+        "ID": "c92b8294-dc90-4555-9ec3-f385f7d3284e",
+        "nombre": "Comer a las 8pm",
+        "descripcion": "Comida de dieta 1",
+        "categoria": "salud",
         "prioridad": "alta",
-        "estado": "si",
-        "fecha_creacion": "23/05/2026",
+        "estado": "no",
+        "fecha_creacion": "22/06/2026",
         "fecha_completado": null
     }
 ]
